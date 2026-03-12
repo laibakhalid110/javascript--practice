@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var arr = [1, 2, 3, 4, 5,6];
+   for (var i = 0; i < arr.length; i++) {
+         console.log(arr[i]);
+        }
+
+        var i = 7;
+        var arr2 = [1,"a","b",5,8.10,"laiba",2,5,10];
+        if (i<arr2.length){
+            console.log(arr2[i]);
+        }
+        else if(i<=arr2.length)
+        {
+           console.log("laibakhalid");
+        }
+        
+        var j = 4;
+        var arr3 = [0,1,2,3,4,5,6,7,8,9,"laiba"];
+        while(j<arr3.length){
+            console.log(arr3[j]);
+         j = j+1;
+        }
+        // ---------------------------------
+
+        // Simple Function
+        function f1(){
+            document.write("Simple Function<br>");
+        }
+        f1();
+        function laiba(){
+            document.write("12345 <br>");
+        }
+        laiba();
+
+        // ---------------------------------
+
+        // Function with Parameters
+        function f2(name){
+            document.write("Function with " + name + "<br>");
+        }
+        f2("Parameters");
+
+        function laiba(lastname){
+            document.write("laiba" +lastname+ "<br>")
+        }
+        laiba("khalid");
+
+        // ---------------------------------
+
+        // Function with Return Value
+        function f3(a, b){
+            c = a + b;
+            return c;
+        }
+        var result = f3(5, 10);
+        document.write("Function with Return Value: " + result + "<br>");
+
+        function laiba(a, b){
+            c = a*b;
+            return c;
+        }
+        var result1=laiba(3,4);
+        document.write("the return value :" + result1+ "<br>");
+
+        function sana(a,b){
+            c=a%b;
+            return c;
+        }
+        var result3 = sana(15, 50);
+        document.write("the result is:" +result3+ "<br>");
+
+        // ---------------------------------
+
+        // Function with Default Parameters
+        function f4(name = "Default"){
+            document.write("Function with " + name + "Parameters<br>");
+        }
+        f4();
+
+        // --------------- ES6 ------------------
+
+        // Anonymous Function....... jab function name na dena ho but function call or store krwani ho tab use krte hain.variable ma store krwate hain name ki zarorat ni hotiii. variable ma store kr k arrays , objects b pas krwa skte hain. more flexible hota ha in modern js.
+        var f5 = function(){
+            document.write("This is an anonymous function <br>");
+        };
+        f5();
+
+        var a = function(){
+            document.write("no need off function name <br>");
+        }
+        a();
+
+        var arr=[1,2,3 ,function(){
+            document.write("this is an array function <br>");
+        }]
+        arr[2];
+
+        var a;
+        if (false){
+           a= function(){
+            document.write("this is condition <br>");
+
+            }
+        }
+        else{
+            document.write("nothing <br>");
+        }
+        a();
+
+        var b;
+        b= function(){
+            document.write("hello <br>");
+        }
+        b();
+
+
+        // ---------------------------------
+
+        // Arrow Function.... short and easily readable. no need of write return. it automatic return value. this modern syntax.
+        var f6 = () => {
+            document.write("This is an arrow function <br>");
+        };
+        f6();
+        
+        var c = () =>{
+            document.write("arrow function <br>");
+        }
+        c();
+
+        // ---------------------------------
+
+        // Single Line Arrow Function.... without braces use kr skte hain . 
+        var f7 = (name) =>{ document.write("Single Line " + name + "<br>");}
+        f7("Arrow Function");
+
+        var d = () =>document.write(" single arrow function <br>");
+        d();
+
+        var e;
+        if (true){
+            e =()=> document.write("condition single function<br>");
+        }
+        else{
+            document.write(" not condition single function<br>");
+        }
+        e();
+
+        var arr=[1,2,2,3, ()=> document.write("array single function<br>")];
+        arr[4]();
+
+        var g = (name)=> document.write("write the parameter:" +name+ "<br>");
+        g("laiba");
+
+
+        // ---------------------------------
+
+        // Arrow Function with Implicit Return.... return lekhne ki zarort niii..
+        var f8 = (a, b) => a + b;
+        var sum = f8(3, 4);
+        document.write("Arrow Function with Implicit Return: " + sum + "<br>");
+
+        var h = (c,b)=> c+b;
+        var i = h(4,5);
+        document.write("arrow implicit return: "+i+ "<br>");
+
+
+        // ---------------------------------
+        // Immediately Invoked Function Expression (IIFE)..... forn execute krwane k liye use kiya jata ha..always wrap in ().end pr function call lgte hain().   
+        (function(){
+            document.write("This is an IIFE<br>");
+        })();
+
+        // ---------------------------------
+        // ForEach Method....only use for array.execution of all elements.
+        var arr = [1, 2, 3, 4, 5];
+        document.write("ForEach Method:<br>");
+        arr.forEach(f9);
+        function f9(e){
+            document.write(e + "<br>");
+        }
+
+        // ---------------------------------
+
+        // ForEach with Two Parameters
+        arr.forEach(f10);
+        document.write("ForEach with Two Parameters:<br>");
+        function f10(e, i){
+            document.write("Element: " + e + ", Index: " + i + "<br>");
+        }
+
+    </script>
+</body>
+</html>
