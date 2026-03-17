@@ -1,0 +1,114 @@
+// JSON Object Notation
+// Usually we make a .json file to store data in JSON format, but here we are storing it in a variable for simplicity
+var quizDB = [
+    {
+        q1: "Q1: What is the full form of HTML?",
+        a: "Hello To My Land",
+        b: "Hey Text Markup Language",
+        c: "Hyper Text Markup Language",
+        d: "Hyper Text Makeup Language",
+        ans: "c",
+    },
+    {
+        q1: "Q2: What is the full form of CSS?",
+        a: "Cascading Style Sheets",
+        b: "Cascading Style Sheep",
+        c: "Cartoon Style Sheets",
+        d: "Cascading Super Sheets",
+        ans: "a",
+    },
+    {
+        q1: "Q3: What is the full form of HTTP?",
+        a: "Hyper Text Transfer Product",
+        b: "Hyper Text Transfer Protocol",
+        c: "Hey Transfer Protocol",
+        d: "Hyper Text Test Protocol",
+        ans: "b",
+    },
+    {
+        q1: "Q4: What is the full form of JS?",
+        a: "JavaScript",
+        b: "JavaSuper",
+        c: "JustScript",
+        d: "JordanShoes",
+        ans: "a",
+    },
+    {
+        q1: "Q5: What is the full form of SQL?",
+        a: "Stylish Question Language",
+        b: "Stylesheet Query Language",
+        c: "Statement Question Language",
+        d: "Structured Query Language",
+        ans: "d",
+    }
+];
+
+var question = document.getElementById("question");
+var op1 = document.getElementById("option1");
+var op2 = document.getElementById("option2");
+var op3 = document.getElementById("option3");
+var op4 = document.getElementById("option4");
+var submit = document.querySelector("#submit");
+var options = document.querySelectorAll(".option");
+var answer = document.getElementById("answer");
+var marks = 0;
+var count = 0;
+
+
+function loadQuestion() {
+
+    question.innerText = quizDB[count].q1;
+
+    op1.innerText = quizDB[count].a;
+    op2.innerText = quizDB[count].b;
+    op3.innerText = quizDB[count].c;
+    op4.innerText = quizDB[count].d;
+}
+loadQuestion();
+
+
+function selectedMCQ(){
+    let selectedId = null;
+
+    options.forEach( (e) => {
+        if(e.checked){
+            selectedId =  e.id;
+        }
+    });
+
+    return selectedId;
+}
+
+submit.addEventListener("click", () => {
+    var result = selectedMCQ();
+    // console.log(result);
+
+    if (count < quizDB.length && result == quizDB[count].ans)
+    {
+        marks++;
+    }
+    if(result == null){
+        alert("Please select an option before submitting!");
+        return;
+    }
+    else{
+        count++;
+    }
+
+    function deselectAll(){
+        options.forEach( (e) => {
+            e.checked = false;
+        });
+    }
+    deselectAll();
+
+    if(count < quizDB.length)
+    {
+        loadQuestion();
+    }
+    else{
+        answer.innerHTML = `<h1>Your Marks are: ${marks} out of ${quizDB.length}</h1>`;
+        submit.ariaDisabled = true;
+        submit.style.backgroundColor = "gray";
+    }
+});
