@@ -1,98 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Document</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body{
-            background-color: #9DB5B5;
-              display: flex;
-           justify-content: center;
-           justify-content: center;
-        }
-        .box{
-            height: 450px;
-            width: 520px;
-           border-radius: 10px;
-           background-color: #9D8081;
-           display: flex;
-           justify-content: center;
-           justify-content: center;
-         margin-top: 8rem;
-         box-shadow:  0px 8px 10px #776365;
-           
-        }
-        .box-1{
-            height: 420px;
-            width: 300px;
-            margin: 25px;
-        
-        }
-        h1{
-            font-size: 2rem;
-            margin: 15px;
-        }
-        ul{
-              list-style-type: none;
-                margin: 35px 15px;
-        }
-        ul li{
-              margin: 15px;
-        }
-        button{
-              margin: 25px 85px;
-              height: 30px;
-              width: 100px;
-              font-weight: bold; 
-              background-color: #2F3B45;
-              color: white;
-
-        }
-        #blank{
-            margin: 20px;
-            height: 40px;
-            width: 250px;
-            background-color:  #C6CFD1;
-            color: black;
-            box-shadow:  0px 8px 10px #776365;
-
-        }
-    </style>
-</head>
-<body>
-    <div class="box">
-        <div class="box-1">
-        <h1>Q1:What is the full form of HTML?</h1>
-        <ul class="ul">
-            <li>
-                <input type="radio" name="same" value="Hello To My Land">
-                <label for="">Hello To My Land</label>
-            </li>
-            <li>
-                <input type="radio" name="same" value="Hey Text Markup Language">
-                <label for="">Hey Text Markup Language</label>
-            </li>
-            <li>
-                <input type="radio" name="same" value="HyperText Markup Language">
-                <label for="">HyperText Markup Language</label>
-            </li>
-            <li>
-                <input type="radio" name="same" value="Hypertext Markup Language">
-                <label for="">Hypertext Markup Language</label>
-            </li>
-
-        </ul>
-        <button id="btn">Submit</button>
-        <div id="blank"></div>
-        </div>
-    </div>
-    
-
-    <script>
+  <!-- <script>
        document.getElementById("btn").addEventListener("click",()=>{
         let options = document.getElementsByName("same");
         let selectedAnswer ="";
@@ -104,6 +10,252 @@
         document.getElementById("blank").innerText=selectedAnswer;
        });
 
-    </script>
+    </script> -->
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Quiz</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#9DB5B5;
+display:flex;
+justify-content:center;
+}
+
+.box{
+height:450px;
+width:520px;
+border-radius:10px;
+background:#9D8081;
+display:flex;
+justify-content:center;
+margin-top:8rem;
+box-shadow:0px 8px 10px #776365;
+}
+
+.box-1{
+height:420px;
+width:300px;
+margin:25px;
+}
+
+h1{
+font-size:22px;
+margin:15px;
+}
+
+ul{
+list-style:none;
+margin:35px 15px;
+}
+
+li{
+margin:15px;
+}
+
+button{
+margin:25px 85px;
+height:30px;
+width:100px;
+font-weight:bold;
+background:#2F3B45;
+color:white;
+border:none;
+}
+
+#blank{
+margin:20px;
+height:50px;
+width:250px;
+background:#C6CFD1;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:16px;
+font-weight:bold;
+box-shadow:0px 8px 10px #776365;
+text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+<div class="box-1">
+
+<h1 class="head">Question</h1>
+
+<ul>
+
+<li>
+<input type="radio" name="same" class="similar" id="ans1">
+<label id="opt1"></label>
+</li>
+
+<li>
+<input type="radio" name="same" class="similar" id="ans2">
+<label id="opt2"></label>
+</li>
+
+<li>
+<input type="radio" name="same" class="similar" id="ans3">
+<label id="opt3"></label>
+</li>
+
+<li>
+<input type="radio" name="same" class="similar" id="ans4">
+<label id="opt4"></label>
+</li>
+
+</ul>
+
+<button id="btn">Submit</button>
+
+<div id="blank"></div>
+
+</div>
+</div>
+
+<script>
+
+var quizdb=[
+
+{
+q:"Q1: What is the full form of HTML?",
+opt1:"hey land",
+opt2:"hello world",
+opt3:"HyperText Markup Language",
+opt4:"hypertext machine language",
+ans:"ans3"
+},
+
+{
+q:"Q2: What is the full form of CSS?",
+opt1:"Cascading Style Sheets",
+opt2:"Cascading Style Sheep",
+opt3:"Cartoon Style Sheets",
+opt4:"Cascading Super Sheets",
+ans:"ans1"
+},
+
+{
+q:"Q3: What is the full form of HTTP?",
+opt1:"Hyper Text Transfer Product",
+opt2:"Hyper Text Transfer Protocol",
+opt3:"Hey Transfer Protocol",
+opt4:"Hyper Text Test Protocol",
+ans:"ans2"
+},
+
+{
+q:"Q4: What is the full form of JS?",
+opt1:"JavaScript",
+opt2:"JavaSuper",
+opt3:"JustScript",
+opt4:"JordanShoes",
+ans:"ans1"
+},
+
+{
+q:"Q5: What is the full form of SQL?",
+opt1:"Stylish Question Language",
+opt2:"Stylesheet Query Language",
+opt3:"Statement Question Language",
+opt4:"Structured Query Language",
+ans:"ans4"
+}
+
+];
+
+var head=document.querySelector(".head");
+
+var opt1=document.querySelector("#opt1");
+var opt2=document.querySelector("#opt2");
+var opt3=document.querySelector("#opt3");
+var opt4=document.querySelector("#opt4");
+
+var similar=document.querySelectorAll(".similar");
+
+var btn=document.querySelector("#btn");
+
+var blank=document.querySelector("#blank");
+
+var marks=0;
+var count=0;
+
+function loadQuestion(){
+
+head.innerText=quizdb[count].q;
+
+opt1.innerText=quizdb[count].opt1;
+opt2.innerText=quizdb[count].opt2;
+opt3.innerText=quizdb[count].opt3;
+opt4.innerText=quizdb[count].opt4;
+
+}
+
+loadQuestion();
+
+
+function selectedMCQ(){
+
+let selectedId=null;
+
+similar.forEach((e)=>{
+
+if(e.checked){
+selectedId=e.id;
+}
+
+});
+
+return selectedId;
+
+}
+
+
+btn.addEventListener("click",()=>{
+
+var result=selectedMCQ();
+
+if(result==null){
+alert("Please select an option");
+return;
+}
+
+if(result==quizdb[count].ans){
+marks++;
+}
+
+count++;
+
+similar.forEach((e)=>{
+e.checked=false;
+});
+
+if(count<quizdb.length){
+loadQuestion();
+}
+else{
+
+blank.innerText="Score: "+marks+" / "+quizdb.length;
+
+btn.disabled=true;
+
+}
+
+});
+
+</script>
+
 </body>
 </html>
