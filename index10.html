@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent{
+            height: 150px;
+            width: 150px;
+            background-color: red;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent"> </div>
+
+    <button id="btn"></button>
+    <script>
+         var num=0;
+        setInterval(() => { // setInterval ek built-in function ha JS ka .jab same kam repeat krne k liye use hota ha.1000ms mean 1s. 1s bad function dubra chale ga. syntax setInterval(function, time)
+            num=num+1;
+      console.log(num);
+         }, 1000);
+         setTimeout(() => {//setTimeout function ek delay ke baad ek kaam karta hai.Yahan 3000ms = 3 seconds delay hai.
+            console.log("Noor")
+         },3000);
+
+       var a =setTimeout(()=>{ 
+           var parent= document.getElementById("parent");
+             parent.style.width="800px";
+
+    },5000);
+
+
+         document.getElementById("btn").addEventListener("click",()=>{
+        clearTimeout(a)
+    })
+          var a =setInterval(()=>{
+            var parent= document.getElementById("parent");
+            parent.style.width="200px"; 
+
+        },1000);
+
+
+        document.getElementById("btn").addEventListener("click",()=>{
+        clearInterval(a)
+    })
+    </script>
+</body>
+</html>
