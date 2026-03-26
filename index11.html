@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            display: flex;
+            justify-content: space-around;
+            height: 150px;
+
+            width: 70%;
+        }
+
+        .ins {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+
+
+        }
+
+        .mmm {
+
+            display: flex;
+            margin-top: 80px;
+            margin-left: auto;
+            margin-right: auto;
+            flex-direction: column;
+            width: 600px;
+            background-color: rgb(130, 45, 130);
+            align-items: center;
+
+            justify-content: space-evenly;
+            border-radius: 10px;
+            height: 400px;
+        }
+
+        .btn {
+            width: 50px;
+            padding: 3px;
+            font-weight: bolder;
+            color: white;
+            border-radius: 7px;
+        }
+        .btn:hover{
+            width: 60px;
+            padding: 5px;
+            
+        }
+        .btn:focus{
+            border: 2px solid black;
+            width: 70px;
+            padding: 7px;
+        }
+
+        .btns {
+            background-color: #62c862;
+
+        }
+
+        .btnsp {
+            background-color: #ff5959;
+
+        }
+
+        .btnp {
+            background-color: darkorange;
+
+        }
+
+        .btnr {
+            background-color: #3d3dc5;
+
+        }
+
+        h3,
+        h2 {
+            color: white;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mmm">
+        <h2>Stop Watch</h2>
+
+        <div class="main">
+            <div class="ins">
+                <h3>Hours</h3>
+                <h2 class="hh">00</h2>
+            </div>
+            <div class="ins">
+                <h3>Minutes<h3>
+                        <h2 class="mm">00</h2>
+            </div>
+            <div class="ins">
+                <h3>Seconds<h3>
+                        <h2 class="ss">00</h2>
+            </div>
+            <div class="ins">
+                <h3>Milliseconds<h3>
+                        <h2 class="ms">00</h2>
+            </div>
+        </div>
+        <div>
+            <button class="btns btn">Start</button>
+            <button class="btnsp btn">stop</button>
+            <button class="btnp btn">Pause</button>
+            <button class="btnr btn">reset</button>
+        </div>
+    </div>
+
+    <script>
+        var hh = document.querySelector(".hh");
+        var mm = document.querySelector(".mm");
+        var ss = document.querySelector(".ss");
+        var ms = document.querySelector(".ms");
+        var btns = document.querySelector(".btns");
+        var btnsp = document.querySelector(".btnsp");
+        var btnp = document.querySelector(".btnp");
+        var btnr = document.querySelector(".btnr");
+        var a; 
+        var g = 0;
+        var b = 0;
+        var d = 0;
+        var e = 0;
+        ms.innerText = "00";
+        ss.innerText = "00";
+        mm.innerText = "00";
+        hh.innerText = "00"; 
+        var stopped = false;
+
+
+
+        btns.addEventListener("click", () => {
+
+            if (stopped) {
+                g = 0;
+                b = 0;
+                d = 0;
+                e = 0;
+                ms.innerText = "00";
+                ss.innerText = "00";
+                mm.innerText = "00";
+                hh.innerText = "00";
+                stopped = false;
+            }
+
+            clearInterval(a);
+
+            a = setInterval(() => {
+                //new code start here
+                if (g < 99) {
+                    g++;
+                    if(g<10){
+                             ms.innerText = ` 0${g}`;
+
+                        }
+                        else{
+                            ms.innerText = ` ${g}`;
+                        }
+                }
+                else if (g == 99) {
+
+                    g = 0;
+                    g++;
+                    b++;
+                    if(b<10){
+                             ss.innerText = ` 0${b}`;
+
+                        }
+                        else{
+                            ss.innerText = ` ${b}`;
+                        }
+                    ms.innerText = "00";
+                    if (b == 60) //60
+                    {
+                        b = 0
+                        d++;
+                        if(d<10){
+                             mm.innerText = ` 0${d}`;
+
+                        }
+                        else{
+                            mm.innerText = ` ${d}`;
+                        }
+                        ss.innerText = "00";
+                        if (d == 60) //60
+                        {
+                        d = 0
+                        e++;
+                        if(e<10){
+                             hh.innerText = ` 0${e}`;
+
+                        }
+                        else{
+                            hh.innerText = ` ${e}`;
+                        }
+                        mm.innerText = "00";
+
+                    }
+
+                    }
+
+                }
+                //new code end yahan
+                
+
+            }, 10);
+        })
+        btnp.addEventListener("click", () => {
+
+            clearInterval(a);
+            // ss.innerText=` ${b}`;
+
+        })
+        btnsp.addEventListener("click", () => {
+
+            clearInterval(a);
+            stopped = true;
+
+        })
+        btnr.addEventListener("click", () => {
+
+            clearInterval(a);
+            g = 0;
+            b = 0;
+            d = 0;
+            e = 0;
+            ms.innerText = "00";
+            ss.innerText = "00";
+            mm.innerText = "00";
+            hh.innerText = "00";
+
+        })
+
+    </script>
+</body>
+
+</html>
